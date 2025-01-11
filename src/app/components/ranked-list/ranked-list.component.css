@@ -1,0 +1,56 @@
+:host {
+  display: flex; /* Usa Flexbox para centrar */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+  width: 100vw; /* Asegura que ocupe toda la anchura de la ventana */
+  background: transparent; /* Fondo transparente para respetar el fondo global */
+  margin: 0;
+  padding: 0;
+}
+
+mat-card {
+  padding: 20px;
+  max-width: 800px; /* Ancho máximo para mantener diseño */
+  background: white; /* Fondo del card */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombras para destacar */
+}
+
+mat-toolbar {
+  margin-bottom: 20px;
+  text-align: center;
+}
+  
+  .title-table{
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .loading-container {
+    display: flex; /* Usamos flexbox para alinear el contenido */
+    flex-direction: column; /* Alinea el GIF y el texto uno debajo del otro */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Centra el texto */
+  }
+  
+  .loading-gif {
+    width: 150px; /* Ajusta el tamaño del GIF */
+    height: auto;
+    margin-bottom: 20px; /* Espacio entre el GIF y el texto */
+  }
+  
+  .loading-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #555; /* Ajusta el color del texto */
+    animation: fadeIn 1.5s infinite;
+  }
+  
+  /* Animación para que el texto parpadee ligeramente */
+  @keyframes fadeIn {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }

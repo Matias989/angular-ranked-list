@@ -1,0 +1,20 @@
+{
+  "/riot-api/americas": {
+    "target": "https://americas.api.riotgames.com",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/riot-api/americas": ""
+    }
+  },
+  "/riot-api/la2": {
+    "target": "https://la2.api.riotgames.com",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/riot-api/la2": ""
+    }
+  }
+}

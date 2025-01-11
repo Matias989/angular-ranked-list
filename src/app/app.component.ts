@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RankedListComponent } from './components/ranked-list/ranked-list.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [
+    RankedListComponent, // Importa tu componente standalone
+  ],
 })
 export class AppComponent {
   title = 'tetones';

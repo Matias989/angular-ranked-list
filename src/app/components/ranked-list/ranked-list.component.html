@@ -1,0 +1,45 @@
+<mat-card>
+  <mat-toolbar class="title-table" color="primary">Tetones - Solo/Duo Challenge</mat-toolbar>
+
+  <!-- Mostrar spinner si está cargando -->
+  <div *ngIf="loading" class="loading-container">
+    <img src="assets/XOsX.gif" alt="Cargando..." class="loading-gif" />
+    <p class="loading-text">Cargando los Tetones......</p>
+  </div>
+
+  <!-- Mostrar tabla solo cuando termine de cargar -->
+  <table *ngIf="!loading" mat-table [dataSource]="players" class="mat-elevation-z8 ranked-table">
+    <!-- Icon Column -->
+    <ng-container matColumnDef="icon">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let player; let i = index">
+        <mat-icon *ngIf="i === 0" style="color: gold;">emoji_events</mat-icon>
+        <mat-icon *ngIf="i === 1" style="color: silver;">emoji_events</mat-icon>
+        <mat-icon *ngIf="i === 2" style="color: #CD7F32;">emoji_events</mat-icon>
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let player"> {{ player.gameName }} </td>
+    </ng-container>
+
+    <!-- Rank Column -->
+    <ng-container matColumnDef="rank">
+      <th mat-header-cell *matHeaderCellDef> Rank </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.ranked?.tier || 'Unranked' }} {{ player.ranked?.rank || '' }}
+      </td>
+    </ng-container>
+
+    <!-- Points Column -->
+    <ng-container matColumnDef="points">
+      <th mat-header-cell *matHeaderCellDef> Points </th>
+      <td mat-cell *matCellDef="let player"> {{ player.ranked?.leaguePoints || 0 }} LP </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['icon', 'name', 'rank', 'points']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['icon', 'name', 'rank', 'points']"></tr>
+  </table>
+</mat-card>
