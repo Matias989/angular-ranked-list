@@ -20,6 +20,6 @@ export const appConfig: ApplicationConfig = {
       MatToolbarModule,
       MatProgressSpinnerModule,
       MatTableModule
-    ),
+    ), provideAnimationsAsync(),
   ],
 };
